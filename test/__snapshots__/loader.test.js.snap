@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`loader should work for simple case: errors 1`] = `Array []`;
+
+exports[`loader should work for simple case: result 1`] = `"Simple test"`;
+
+exports[`loader should work for simple case: warnings 1`] = `Array []`;

@@ -8,8 +8,10 @@ import {
 } from './helpers';
 
 describe('loader', () => {
-  it('should work', async () => {
-    const compiler = getCompiler('simple.js');
+  it('should work for simple case', async () => {
+    const compiler = getCompiler('simple.js', {
+      language: 'en_US'
+    });
     const stats = await compile(compiler);
 
     expect(

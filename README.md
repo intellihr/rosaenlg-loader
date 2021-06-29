@@ -1,9 +1,3 @@
-<div align="center">
-  <a href="https://github.com/webpack/webpack">
-    <img width="200" height="200" src="https://webpack.js.org/assets/icon-square-big.svg">
-  </a>
-</div>
-
 [![npm][npm]][npm-url]
 [![node][node]][node-url]
 [![deps][deps]][deps-url]
@@ -24,8 +18,6 @@ To begin, you'll need to install `rosaenlg-loader`:
 $ npm install rosaenlg-loader --save-dev
 ```
 
-<!-- isLoader ? use(this) : delete(isPlugin) -->
-
 Then add the loader to your `webpack` config. For example:
 
 **file.pug**
@@ -34,8 +26,6 @@ Then add the loader to your `webpack` config. For example:
 import file from 'file.pug';
 ```
 
-<!-- isLoader ? use(this) : delete(isPlugin) -->
-
 **webpack.config.js**
 
 ```js
@@ -43,11 +33,13 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.ext$/,
+        test: /\.pug$/,
         use: [
           {
             loader: `rosaenlg-loader`,
-            options: { ...options },
+            options: {
+              language: ['en_US']
+            },
           },
         ],
       },
@@ -60,31 +52,11 @@ And run `webpack` via your preferred method.
 
 ## Options
 
-### `[option]`
+### language
 
-Type: `[type|other-type]`
-Default: `[type|null]`
+Type: string|array
 
-[ option description ]
-
-<!-- isLoader ? use(this) : delete(isPlugin) -->
-
-**webpack.config.js**
-
-```js
-module.exports = {
-  module: {
-    rules: [
-      {
-        loader: `rosaenlg-loader`,
-        options: {
-          [option]: '',
-        },
-      },
-    ],
-  },
-};
-```
+Target languages for compilation, e.g. `en_US`, `fr_FR`
 
 
 ## Examples
@@ -94,19 +66,34 @@ module.exports = {
 **webpack.config.js**
 
 ```js
-// Example setup here..
+{
+  test: /\.pug$/,
+  use: [
+    {
+      loader: `rosaenlg-loader`,
+      options: {
+        language: ['en_US']
+      },
+    },
+  ],
+}
 ```
 
 **file.pug**
 
-```js
-// Source code here...
+```
+| example translation
 ```
 
-**bundle.js**
+**file.js**
 
 ```js
-// Bundle code here...
+import rosaenlg from 'rosaenlg/dist/rollup/rosaenlg_tiny_en_US_3.0.0';
+import template from 'file.pug';
+
+const text = template.en_US({
+  util: new rosaenlg.NlgLib({ language: 'en_US' })
+})
 ```
 
 ## Contributing

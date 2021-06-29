@@ -1,13 +1,13 @@
 {
-  "name": "rosaenlg-loader",
+  "name": "@intellihr/rosaenlg-loader",
   "version": "0.0.1",
   "description": "Webpack Loader for RosaeNLG",
   "license": "ISC",
   "repository": "github:intellihr/rosaenlg-loader",
-  "author": "developers@intellihr.com",
+  "author": "IntelliHR<https://intellihr.com.au/>, Soloman Weng <soloman.weng@intellihr.com>",
   "homepage": "https://github.com/intellihr/rosaenlg-loader",
   "bugs": "https://github.com/intellihr/rosaenlg-loader/issues",
-  "main": "index.js",
+  "main": "dist/cjs.js",
   "engines": {
     "node": ">= 12.9.0"
   },
@@ -18,9 +18,7 @@
     "build": "NODE_ENV=production babel src -d dist --copy-files",
     "commitlint": "commitlint --from=master",
     "security": "npm audit",
-    "lint:prettier": "prettier \"{**/*,*}.{js,json,md,yml,css,ts}\" --list-different",
-    "lint:js": "eslint --cache .",
-    "lint": "npm-run-all -l -p \"lint:**\"",
+    "lint": "eslint --cache .",
     "test:only": "NODE_ENV=test jest",
     "test:watch": "npm run test:only -- --watch",
     "test:coverage": "npm run test:only -- --collectCoverageFrom=\"src/**/*.js\" --coverage",

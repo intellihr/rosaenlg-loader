@@ -1,0 +1,56 @@
+{
+  "name": "rosaenlg-loader",
+  "version": "0.0.1",
+  "description": "Webpack Loader for RosaeNLG",
+  "license": "ISC",
+  "repository": "github:intellihr/rosaenlg-loader",
+  "author": "developers@intellihr.com",
+  "homepage": "https://github.com/intellihr/rosaenlg-loader",
+  "bugs": "https://github.com/intellihr/rosaenlg-loader/issues",
+  "main": "index.js",
+  "engines": {
+    "node": ">= 12.9.0"
+  },
+  "scripts": {
+    "start": "npm run build -- -w",
+    "clean": "rm -rf dist",
+    "prebuild": "npm run clean",
+    "build": "NODE_ENV=production babel src -d dist --copy-files",
+    "commitlint": "commitlint --from=master",
+    "security": "npm audit",
+    "lint:prettier": "prettier \"{**/*,*}.{js,json,md,yml,css,ts}\" --list-different",
+    "lint:js": "eslint --cache .",
+    "lint": "npm-run-all -l -p \"lint:**\"",
+    "test:only": "NODE_ENV=test jest",
+    "test:watch": "npm run test:only -- --watch",
+    "test:coverage": "npm run test:only -- --collectCoverageFrom=\"src/**/*.js\" --coverage",
+    "pretest": "npm run lint",
+    "test": "npm run test:coverage",
+    "prepare": "npm run build",
+    "release": "standard-version"
+  },
+  "files": [
+    "dist/",
+    "lib/",
+    "index.js"
+  ],
+  "peerDependencies": {
+    "webpack": "^4.0.0 || ^5.0.0"
+  },
+  "dependencies": {
+    "loader-utils": "^2.0.0",
+    "rosaenlg": "^3.0.0",
+    "schema-utils": "^3.0.0"
+  },
+  "devDependencies": {
+    "@webpack-contrib/defaults": "^6.3.0",
+    "babel-cli": "^6.26.0"
+  },
+  "keywords": [
+    "webpack",
+    "RosaeNLG",
+    "NLG",
+    "loader",
+    "Natural Language Generation"
+  ]
+}

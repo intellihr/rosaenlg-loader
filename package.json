@@ -1,6 +1,6 @@
 {
   "name": "@intellihr/rosaenlg-loader",
-  "version": "0.0.1-canary.0",
+  "version": "0.0.1-canary.1",
   "description": "Webpack Loader for RosaeNLG",
   "license": "ISC",
   "repository": "github:intellihr/rosaenlg-loader",

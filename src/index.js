@@ -37,7 +37,7 @@ export default function loader() {
       ${source};
       return template;
     }
-  `)}
+  `).join('\n')}
   export default {
     ${templateSources.map(({ language }) => `${language}: ${language}()`).join(',')}
   };

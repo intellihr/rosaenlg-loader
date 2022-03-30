@@ -9,7 +9,7 @@
   "bugs": "https://github.com/intellihr/rosaenlg-loader/issues",
   "main": "dist/cjs.js",
   "engines": {
-    "node": ">= 12.9.0"
+    "node": ">= 16.14.0"
   },
   "scripts": {
     "start": "npm run build -- -w",
@@ -51,9 +51,9 @@
     "eslint": "^7.29.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-import": "^2.23.4",
-    "jest": "^24.9.0",
+    "jest": "^27.5.1",
     "memfs": "^3.2.2",
-    "standard-version": "^9.3.0",
+    "standard-version": "^9.3.2",
     "webpack": "^5.41.0"
   },
   "keywords": [
